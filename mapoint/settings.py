@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3l1ax1(0u1e$^iavnx^a_y7w9ivr+rix*nr_w#tug#h($p5fmp'
+SECRET_KEY = os.getenv(
+    'SECRET_KEY', '3l1ax1(0u1e$^iavnx^a_y7w9ivr+rix*nr_w#tug#h($p5fmp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +40,16 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+THIRD_PARTY_APPS = (
+    'tastypie',
+)
+
+LOCAL_APPS = (
+    'app',
+)
+
+INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,7 +66,7 @@ ROOT_URLCONF = 'mapoint.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['assets/app/views'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,3 +111,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'assets'
+
+STATICFILES_DIRS = (
+    BASE_DIR + "/assets/lib/",
+    BASE_DIR + "/assets/app",
+)
+
+TASTYPIE_ALLOW_MISSING_SLASH = True
+TASTYPIE_DEFAULT_FORMATS = ['json']
