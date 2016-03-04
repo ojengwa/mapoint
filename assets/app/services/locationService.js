@@ -45,7 +45,7 @@ app.service('LocationService', ["$http", "$q", function ($http, $q) {
                 url: "api/location" + id + "/",
                 data: data
             }).success(function (data, status, headers, config) {
-                defer.resolve(data);
+                defer.resolve(status, data);
             }).error(function (data, status, headers, config) {
                 defer.reject(status);
             });
