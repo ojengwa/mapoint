@@ -1,71 +1,38 @@
 <div class="row" style="min-height: 100vh; width: 100vw">
-  <ui-gmap-google-map center='vm.map.center'
-                      zoom='vm.map.zoom'
-                      pan='vm.map.pan'
-                      options='vm.map.options'
-                      events='vm.map.events'>
+  <ui-gmap-google-map center='map.center'
+                      zoom='map.zoom'
+                      pan='map.pan'
+                      options='map.options'
+                      events='map.events'>
   </ui-gmap-google-map>
 </div>
-
-<hr>
 
 <div class="container">
   <div class="bs-docs-section" id="projects">
 
     <div class="row">
-      <div class="col-lg-12">
-        <h2 id="type-blockquotes">Featured Projects...</h2>
+      <div class="col-lg-6">
+        <h2 id="type-blockquotes">Saved Locations</h2>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="pull-right"><button class="btn btn-danger btn-md">Clear All</button></h2>
       </div>
     </div>
-    <br>
+
+    <hr>
+
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-12">
         <div class="bs-component">
-          <div class="well well-lg">
-            The 'official' <a class="" href="https://pythonhosted.org/paystack/">Paystack SDK for Python</a>. This package is compatible with Python 2.6+, Python 3.1+ and PyPy.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://hub.docker.com/r/bern/inits-ci/">inits-ci</a> is a Docker container for custom PHP Jenkins server on Google Compute Engine. Tweaked to work with CakePHP out of the box..
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://github.com/ojengwa/laptop.py">laptop.py</a> is a shell script which turns your OS X laptop into an awesome fullstack web development machine using Python. Inspired by ThoughtBot's laptop for Ruby on Rails.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://www.npmjs.com/package/fixperm">fixperm</a> is a small command-line utility for fixing app permissions. fixperm attempts to guess who the current logging user is if the optional `-u` or `--user` flag is not set.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://pythonhosted.org/accounting">accounting</a> is a Python package providing simple and advanced number, money and currency formatting.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://www.npmjs.com/package/generator-mern">generator-mern</a> is a Yo generator for scaffolding isomorphic apps using Mongo, Express, React and NodeJS.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="bs-component">
-          <div class="well well-lg">
-            <a class="" href="https://www.npmjs.com/package/bankroll">bankroll</a> is an angular module providing directives and filters for number, money and currency parsing/formatting and conversion.
-          </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Address</th>
+                <th>Longitude, Latitude</th>
+                <th>Place ID</th>
+              </tr>
+            </thead>
+          </table>
         </div>
       </div>
     </div>
