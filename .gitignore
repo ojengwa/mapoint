@@ -43,7 +43,8 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
-
+.DS_Store
+gi.sh
 # Translations
 *.mo
 *.pot
